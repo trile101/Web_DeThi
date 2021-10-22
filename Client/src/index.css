@@ -1,0 +1,10 @@
+/* import file css  */
+
+@import url("./Components/Pages/DetailPage/DetailPage.css");
+@import url("./Components/Pages/DocuPage/DocuPage.css");
+@import url("./Components/Head/header.css");
+@import url("./Components/Pages/MainPage/mainPage.css");
+@import url("./Components/Pages/DisPage/DisPage.css");
+@import url('react-notifications-component/dist/theme.css');
+@import url('animate.css');
+

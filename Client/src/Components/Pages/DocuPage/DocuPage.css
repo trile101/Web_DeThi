@@ -1,0 +1,37 @@
+.Body_Page{
+    width: 100%;
+    margin-top: 30px;
+    padding-left: 35px;
+}
+
+.Form_sort_year{
+    width: 100%;
+    height: 50px;
+}
+
+.Form_sort_year span{
+    text-align:center;
+    font-weight: bold;
+    color: black;
+    font-size: 18px;
+}
+
+.Form_sort_year select{
+    margin-left: 10px;
+}
+
+.Page_file{
+    width: 100%;
+}
+
+.Page_file_detail{
+    width: 20%;
+    height: 150px;
+    margin: 20px;
+    float: left;
+    text-align:center;
+}
+
+.Page_file_detail h4{
+    color: rgb(0, 0, 0);
+}

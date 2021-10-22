@@ -1,0 +1,66 @@
+header{
+    height: 100px;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    background-color: white;
+}
+.form-Logo{
+    min-height: 100%;
+    width: 30%;
+    float: left;
+}
+
+.form-Logo img{
+    float: left;
+    margin: 15px;
+}
+
+.form-Logo div{
+    margin: 34px;
+}
+
+.form-Logo div h4{
+    color: black;
+}
+.input-group{
+    height: 75%;
+    width: 45%;
+    float: left;
+    padding-top: 25px;
+}
+
+.input-group input{
+    width: 75%;
+    height: 45%;
+    float: left;
+    margin-top: 0px;
+}
+
+.input-group button{
+    width: 20%;
+    height: 53%;
+    background-color: rgb(160, 152, 152);
+    border: none;
+}
+
+.input-group button p{
+    color:rgb(0, 0, 0);
+    font-weight: 600;
+}
+
+.form-Distribution{
+    min-height: 80%;
+    width: 15%;
+    float: right;
+    padding-left: 30px;
+    padding-top: 16px;
+}
+
+
+.form-Distribution img{
+    float: left;
+    padding: 10px;
+}
+.form-Distribution h6{
+    color: black;
+}

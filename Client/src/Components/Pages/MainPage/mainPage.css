@@ -1,0 +1,26 @@
+.Body_Page{
+    width: 93%;
+    height: 400px;
+    margin-top: 30px;
+    padding-left: 6%;
+}
+
+.Name_subject{
+    width: 30%;
+    height: 60px;
+    background-color: rgb(146, 142, 138);
+    float: left;
+    margin: 5px;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+.Name_subject:hover{
+    background-color: rgb(160, 152, 144);
+}
+
+.Name_subject h5{
+    text-align:center;
+    font-weight: bold;
+    color: black;
+}
