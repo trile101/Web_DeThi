@@ -52,6 +52,10 @@
     height: 80%;
     width: 50%;
 }
+.form-group1 p{
+    color: red;
+    font-size: 14px;
+}
 
 .Body_Page12 form button{
     height: 40px;

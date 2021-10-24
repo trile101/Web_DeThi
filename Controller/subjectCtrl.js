@@ -14,10 +14,20 @@ const SubjectCtrl = {
         try{
             const _subject = req.params.sub
             // get du lieu tu mongodb
-            const _data = await file.find({subject:_subject}, {subject: 1, year: 1})
+            const _data = await file.find({subject:_subject, active:true}, {subject: 1, year: 1})
 
             res.send(_data)
 
+        } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    getUnActiveFile: async(req, res) => {
+        try{
+            // get du lieu tu mongodb
+            const _data = await file.find({active:false}, {subject: 1, year: 1})
+
+            res.send(_data)
         } catch (err) {
             return res.status(500).json({msg: err.message})
         }

@@ -5,6 +5,7 @@
 @import url("./Components/Head/header.css");
 @import url("./Components/Pages/MainPage/mainPage.css");
 @import url("./Components/Pages/DisPage/DisPage.css");
+@import url("./Components/Pages/AdminPage/adminPage.css");
 @import url('react-notifications-component/dist/theme.css');
 @import url('animate.css');
 

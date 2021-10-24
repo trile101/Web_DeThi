@@ -9,12 +9,17 @@ function DisPage() {
 
     const onSubmit = async e => {
       e.preventDefault()
-      if (subject == '') {
+      // check ten nguoi dung nhap ten mon hoc
+      if (subject === subject.toLowerCase()) {
+        alert("Bạn nhập sai format tên môn học rồi (^.^)")
+      } else
+      if (subject === '') {
         alert("Bạn quên nhập tên môn học (^.^)")
       } else if (file === '') {
         alert("Bạn quên upload tài liệu lên trang rồi (^.^)")
       }  else {
-        const formData = new FormData
+        // tao form data
+        const formData = new FormData()
         for (let Fi of file) {
           formData.append('many-files', Fi)
         }
@@ -28,7 +33,7 @@ function DisPage() {
               'Content-Type': 'multipart/form-data'
             }
           })
-          if (res.data == "Updated123!") {
+          if (res.data === "Updated123!") {
             alert("Đã updated thành công - Cảm ơn bạn đã đóng góp tài liệu!")
           }
 
@@ -47,8 +52,8 @@ function DisPage() {
                       <h2>
                           Cùng đóng góp tài liệu nào!
                       </h2>
-                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAiu9WWAFExJbsbzdlH_Vxqv7iZAhm-RZ-sQ&usqp=CAU" width="40px" height="40px"/>
-                      <img src="http://baoquocte.vn/stores/news_dataimages/minhhoa/092016/20/11/110706_bieu_tuong_cam_xuc.jpg" width="60px" height="40px"/>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAiu9WWAFExJbsbzdlH_Vxqv7iZAhm-RZ-sQ&usqp=CAU" alt="" width="40px" height="40px"/>
+                      <img src="http://baoquocte.vn/stores/news_dataimages/minhhoa/092016/20/11/110706_bieu_tuong_cam_xuc.jpg" alt="" width="60px" height="40px"/>
                   </div>
 
                   <form onSubmit={onSubmit}>
@@ -65,8 +70,10 @@ function DisPage() {
                               <option value="2017">2017</option>
                               <option value="2016">2016</option>
                               <option value="2015">2015</option>
+                              <option value="2014">2014</option>
                           </select>
                           <input type="text" value={subject} onChange={({target}) => {setSubject(target.value)}}name="subject" placeholder="Nhập tên môn học"/>
+                          <p>Bạn ơi tên môn học viết hoa chữ cái đầu (ví dụ như: toán tổ hợp = Toán tổ hợp)</p>
                       </div>
                       <button type="submit" >Submit</button>
                   </form>

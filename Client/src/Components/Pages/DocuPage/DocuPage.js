@@ -6,17 +6,15 @@ import {Link} from 'react-router-dom'
 function DocuPage() {
     const params = useParams()
     const [file, setFile] = useState([])
-    const [year, setYear] = useState([])
-    const [sort, setSort] = useState('')
+
     // lay gia tri tu URL
     const subject = params.subject
 
     // goi API de lay du lieu
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async() => {
         const res = await axios.get(`http://localhost:4000/api/subject/s/${subject}`)
-        const res1 = await axios.get(`http://localhost:4000/api/year`)
         setFile(res.data)
-        setYear(res1.data)
     }, [])
 
     return (
@@ -28,7 +26,7 @@ function DocuPage() {
                         return (
                             <Link to={`/${subject}/${f._id}`}>
                                 <div className="Page_file_detail">
-                                    <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" heigth="70px" width="80px" />
+                                    <img src="https://cdn-icons-png.flaticon.com/512/3767/3767084.png" alt="" heigth="70px" width="80px" />
                                     <h4>{f.subject + "-" + f.year}</h4>
                                 </div>
                             </Link>

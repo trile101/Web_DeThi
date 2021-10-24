@@ -2,6 +2,7 @@ const file = require('../Model/file')
 const subject = require('../Model/subject')
 const statistic = require('../Model/statistic')
 const JSZIP = require('jszip')
+const mongoose = require('mongoose')
 
 const fileCtrl = {
     UploadFile: async(req, res) => {
@@ -9,14 +10,6 @@ const fileCtrl = {
             // xac dinh mon hoc (subject) co trong mongodb
             const subj = req.body.subject
             const _year = req.body.select
-
-            const check = await subject.findOne({name:subj.toLowerCase()})
-            // tao gia tri moi trong mongodb - subject
-            if (check == null) {
-                console.log(check)
-                const newSubject = new subject({name:subj.toLowerCase()})
-                await newSubject.save()
-            }
 
             // check file gui 1: nhieu anh , 2: 1 file pdf hay word
             if (req.files['many-files'].length > 1) {
@@ -33,7 +26,7 @@ const fileCtrl = {
                     name: req.files['many-files'][0].name,
                     mimetype: req.files['many-files'][0].mimetype,
                     data: _data,
-                    active: true
+                    active: false
                 })
                 await newFile.save()
             } else {
@@ -47,7 +40,7 @@ const fileCtrl = {
                     name: req.files['many-files'].name,
                     mimetype: req.files['many-files'].mimetype,
                     data: _data,
-                    active: true
+                    active: false
                 })
                 await newFile.save()
             }
@@ -97,6 +90,38 @@ const fileCtrl = {
             })
             
         } catch (err) {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    DeleteFile: async(req, res) => {
+        try{
+            const _ID = req.params.Id
+            const data = await file.findByIdAndDelete(_ID)
+            res.json("Oke")
+        } catch {
+            return res.status(500).json({msg: err.message})
+        }
+    },
+    ActiveFile: async(req, res) => {
+        try{
+            const _Id = req.params.Id
+            // convert from string to object ID
+            var ID_obj = mongoose.Types.ObjectId(_Id)
+            await file.updateOne({_id:ID_obj}, {active: true})
+
+            // xu li them du lieu vao file subject => de them mon hoc moi
+            const _data = await file.find({_id:ID_obj}, {subject:1})
+            const subj = _data[0].subject
+
+            const check = await subject.findOne({name:subj})
+            // tao gia tri moi trong mongodb - subject
+            if (check == null) {
+                const newSubject = new subject({name:subj})
+                await newSubject.save()
+            }
+            
+            res.json("oke nha")
+        } catch {
             return res.status(500).json({msg: err.message})
         }
     },

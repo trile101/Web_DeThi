@@ -1,5 +1,5 @@
 const express = require('express');
-const  mongoose = require('mongoose');
+const mongoose = require('mongoose');
 require('dotenv').config();
 const path = require('path')
 const cors = require('cors')
@@ -13,10 +13,10 @@ app.use(cors());
 app.use(fileUpload());
 app.use(cookieParser())
 
-// thiet lap routers
+
 // 1. get : '/'
 app.get('/', (req, res) => {
-    res.sendFile(path.join(`${__dirname}/./Views/page.html`))
+    res.sendFile(path.resolve(__dirname, 'client', 'public', 'index.html'))
 })
 
 // 2. router: '/'
@@ -24,6 +24,7 @@ app.use('/api', require('./Router/file'))
 app.use('/api', require('./Router/subject'))
 app.use('/api', require('./Router/year'))
 app.use('/api', require('./Router/statistic'))
+app.use('/api', require('./Router/admin'))
 
 
 // Connect to mongoDB

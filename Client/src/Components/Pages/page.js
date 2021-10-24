@@ -4,11 +4,13 @@ import mainPage from './MainPage/mainPage'
 import DocuPage from './DocuPage/DocuPage'
 import DetailPage from './DetailPage/DetailPage'
 import DisPage from './DisPage/DisPage'
+import AdminPage from './AdminPage/adminPage'
 
 
 function Pages() {
     return (
         <Switch>
+            <Route path="/admin" exact component={AdminPage} />
             <Route path="/contribute" extract component={DisPage} />
             <Route path="/:subject/:_Id" extract component={DetailPage}/>
             <Route path="/:subject" exact component={DocuPage} />

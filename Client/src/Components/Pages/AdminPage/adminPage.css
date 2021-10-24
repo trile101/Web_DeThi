@@ -1,0 +1,114 @@
+.Body_place1{
+    width: 95%;
+    margin-left: 5%;
+    margin-top: 50px;
+    position: relative;
+}
+.form_name{
+    height: 10%;
+    width: 100%;
+    padding-top: 2.5%;
+}
+.form_name h3{
+    color: black;
+    margin-left: 10%;
+}
+.place_form{
+    background-color: rgb(236, 243, 241);
+    width: 50%;
+    height: 350px;
+    margin-left: 23%;
+
+}
+.form_infor_login{
+    width: 100%;
+    height: 100%;
+}
+.form_input{
+    width: 55%;
+    height: 13%;
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.form_submit{
+    height: 12%;
+    width: 100%;
+    margin-top: 10%;
+}
+.form_submit button{
+    height: 100%;
+    width: 25%;
+    float: right;
+    margin-right: 10%;
+    background: rgba(95, 91, 91, 0.247);
+    border: none;
+}
+.form_submit button:hover{
+    background: rgba(116, 111, 111, 0.575);
+}
+.Place{
+    margin-left: 20%;
+    width: 55%;
+    height: 50px;
+    float:left;
+    border: 1px solid rgb(65, 62, 62);
+    margin-bottom: 40px;
+}
+.place_infor{
+    height: 100%;
+    width: 79%;
+    float: left;
+    background-color: blanchedalmond;
+}
+.place_infor:hover{
+    background-color: rgb(226, 199, 155);
+}
+.place_button_X{
+    height: 101%;
+    width: 10%;
+    border: 1px solid black;
+    float: left;
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEesj7dT8cNpmdox_fUodL2cUa3uldc6yCjQ&usqp=CAU);
+    background-position: center center;
+    background-size: cover;
+}
+.place_button_X:hover{
+    border: 2px solid black;
+}
+.place_button_Y{
+    height: 101%;
+    width: 11%;
+    float:left;
+    background-image: url(https://thumbs.dreamstime.com/b/symbol-ok-button-isolated-icon-design-illustration-graphic-73293013.jpg);
+    background-position: center center;
+    background-size: cover;
+    border: 1px solid black;
+}
+.place_button_Y:hover{
+    border: 2px solid black;
+}
+.Name_sub{
+    width: 79%;
+    height: 100%;
+    float: left;
+    border-right: 1px solid black;
+}
+.Name_year{
+
+    width: 20%;
+    height: 100%;
+    float:right;
+}
+.Name_sub p{
+    margin-top: 4%;
+    font-size: 90%;
+    font-weight: 800;
+    margin-left: 5px;
+    color: black;
+}
+.Name_year p{
+    margin-top: 15%;
+    font-size: 90%;
+    font-weight: 800;
+    color: black;
+}

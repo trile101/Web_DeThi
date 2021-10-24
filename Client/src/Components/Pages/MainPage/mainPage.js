@@ -9,6 +9,7 @@ function MainPage(){
     const [subject, setSubject] = useState([])
     const [subDisplay, setSubDisplay] = useState([])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () =>  {
         const res = await axios.get('http://localhost:4000/api/subject')
         setSubject(res.data)
@@ -16,12 +17,13 @@ function MainPage(){
         setSearch('')
     }, [])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async () => {
-        if (subject.length != 0) {
+        if (subject.length !== 0) {
             const tempt = await subject.filter((sub) => {
                 const t1 = sub.name.toLowerCase()
                 const t_search = _search.toLowerCase()
-                if (t1.search(t_search) != -1 || _search === '') return true
+                if (t1.search(t_search) !== -1 || _search === '') return true
                 return false
             })
             setSubDisplay(tempt)

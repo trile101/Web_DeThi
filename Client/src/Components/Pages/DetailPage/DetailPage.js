@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import axios from 'axios'
 import { useEffect, useState} from 'react'
 import {useParams} from 'react-router-dom'
@@ -9,6 +10,7 @@ function DetailPage() {
     const params = useParams()
     const _id = params._Id
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(async() => {
       const res = await axios.get(`http://localhost:4000/api/files/${_id}`)
       setFile(res.data)
@@ -25,12 +27,14 @@ function DetailPage() {
 
     function FilePdf() {
         return (
+            // eslint-disable-next-line jsx-a11y/iframe-has-title
             <iframe src={"data:application/pdf;base64," + file.data} />
         )
     }
 
     function FileImage() {
-        if (NumPage == 1) {
+        if (NumPage === 1) {
+
             return (
                 <div className="sub_file">
                     <div className="place_subFile">
